@@ -1,0 +1,32 @@
+@'
+# Java / Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# Node.js
+node_modules/
+dist/
+.next/
+
+# Environment files and secrets
+.env
+.env.*
+!.env.example
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Logs
+*.log
+logs/
+
+# Operating system
+.DS_Store
+Thumbs.db
+
+# Build files
+build/
+out/
+'@ | Set-Content .gitignore
