@@ -1,0 +1,28 @@
+services:
+  identity-access-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: admin-delta-identity
+    restart: unless-stopped
+
+    ports:
+      - "8081:8081"
+
+    environment:
+      DB_URL: jdbc:postgresql://postgres:5432/identity_access_db
+      DB_USERNAME: ${POSTGRES_USER:?POSTGRES_USER is required}
+      DB_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD is required}
+
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+    networks:
+      - admin-delta-network
+
+networks:
+  admin-delta-network:
+    name: admin-delta-network
+    driver: bridge

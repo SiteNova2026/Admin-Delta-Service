@@ -1,0 +1,18 @@
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: admin-delta-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    depends_on:
+      - frontend
+    networks:
+      - admin-delta-network
+
+networks:
+  admin-delta-network:
+    name: admin-delta-network
+    driver: bridge
