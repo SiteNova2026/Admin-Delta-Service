@@ -2,6 +2,13 @@
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
+## Docker Compose
+
+Copy `.env.example` to `.env`, then set `APP_ENV` to `development` or `production`.
+Run `docker compose up --build` from this directory. Development is the default
+and is available at `http://localhost:5173`; production is available at
+`http://localhost`.
+
 Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
